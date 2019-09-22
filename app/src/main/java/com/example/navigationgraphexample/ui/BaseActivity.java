@@ -1,8 +1,10 @@
-package com.example.navigationgraphexample;
+package com.example.navigationgraphexample.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.navigationgraphexample.R;
 
 public class BaseActivity extends AppCompatActivity {
 
