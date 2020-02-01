@@ -13,6 +13,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.navigationgraphexample.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,6 +24,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
  */
 public class HomeFragment extends Fragment {
 
+    Button profileBtn;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -42,10 +44,17 @@ public class HomeFragment extends Fragment {
 
         BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNav);
 
-        NavController navController =
+        final NavController navController =
                 Navigation.findNavController(requireActivity(),R.id.base_fragment);
 
             NavigationUI.setupWithNavController(bottomNavigationView,navController);
 
+        Button profileBtn = view.findViewById(R.id.profileBtn);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.profileFragment);
+            }
+        });
     }
 }
